@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="utf-8">
+    <title>AcedmiTechLearn</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta name="description" content="Welcome to AcedmiTechLearn"/>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="{%static 'img/logo.webp' %}">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Roboto:wght@500;700;900&display=swap"
+          rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css"
+          integrity="sha512-dPXYcDub/aeb08c63jRq/k6GaKccl256JQy/AnOq7CAnEZ9FzSL9wSbcZkMp4R26vBsMLFYH4kQ67/bbV8XaCQ=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+
+    <!-- Libraries Stylesheet -->
+    <link href="{%static 'lib/animate/animate.min.css' %}" rel="stylesheet">
+    <link href="{%static 'lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+    <link href="{%static 'lib/lightbox/css/lightbox.min.css' %}" rel="stylesheet">
+    <!-- Customized Bootstrap Stylesheet -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"
+          integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+
+    <!-- Template Stylesheet -->
+    <link href="{%static 'css/style.css' %}" rel="stylesheet">
+
+</head>
+<body>
+
+<!-- Navbar Start -->
+<nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top py-3 p-md-0">
+    <div class="container">
+        <a class="navbar-brand d-none d-lg-block" href="{% url 'Home' %}">AcedmiTechLearn</a>
+        <button class="navbar-toggler shadow-none" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+        <div class="offcanvas offcanvas-start" tabIndex="-1" id="offcanvasNavbar"
+             aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Hello User</h5>
+                <button type="button" class="btn-close shadow-none" data-bs-dismiss="offcanvas"
+                        aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="navbar-nav justify-content-center flex-grow-1 pe-3 gap-2 gap-lg-4">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'Home' %}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'About' %}">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'Service' %}">Service</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'Classes' %}" class="nav-link">Classes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'Contact' %}">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        {% if request.user.is_authenticated %}
+        <div class="dropdown">
+            <button class="btn dropdown-toggle border-0 hidden-arrow" type="button" data-bs-toggle="dropdown"
+                    data-bs-auto-close="true" aria-expanded="false">
+                <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="rounded-circle"
+                     height="40" alt="avatar"
+                />
+            </button>
+
+            <ul class="dropdown-menu dropdown-menu-end">
+                {% if request.user.student %}
+                <li class='dropdown-item'>
+                    <a class="nav-link" href="{% url 'Profile' %}">My Profile</a>
+                </li>
+                {% endif %}
+                <li class='dropdown-item'>
+                    <a class="nav-link" href="{% url 'MyClasses' %}">My Classes</a>
+                </li>
+                <li class='dropdown-item'>
+                    <a class="nav-link" href="{% url 'Logout' %}">Logout</a>
+                </li>
+            </ul>
+        </div>
+        {% else %}
+        <div>
+            <a class="btn bg-black text-white px-4 py-2" href="{% url 'Register' %}">Register</a>
+            <a class="btn bg-light text-black px-4 py-2" href="{% url 'Login' %}">Login</a>
+        </div>
+        {% endif %}
+    </div>
+
+</nav>
+<!-- Navbar End -->
+
+{% block content %}
+
+{% endblock %}
+
+
+<!-- Back to Top -->
+<a href="#" class="btn btn-lg btn-outline-primary btn-lg-square back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+<!-- Footer Start -->
+<div class="container-fluid bg-dark text-light mt-5 pt-5 wow fadeInUp" data-wow-delay="0.1s">
+    <div class="container py-5">
+        <div class="row g-5">
+            <div class="col-lg-4 col-md-6">
+                <h3 class="text-white mb-4">Quick Links</h3>
+                <div class="d-flex flex-column justify-content-start">
+                    <a class="text-light mb-2" href="{% url 'Home' %}">
+                        <i class="fa-solid fa-arrow-right text-primary me-2"></i>Home
+                    </a>
+                    <a class="text-light mb-2" href="{% url 'About' %}">
+                        <i class="fa-solid fa-arrow-right text-primary me-2"></i>About Us
+                    </a>
+                    <a class="text-light mb-2" href="{% url 'Service' %}">
+                        <i class="fa-solid fa-arrow-right text-primary me-2"></i>Our Services
+                    </a>
+                    <a class="text-light mb-2" href="{% url 'Classes' %}">
+                        <i class="fa-solid fa-arrow-right text-primary me-2"></i>Our Classes</a>
+                    <a class="text-light" href="{% url 'Contact' %}">
+                        <i class="fa-solid fa-arrow-right text-primary me-2"></i>Contact Us
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <h3 class="text-white mb-4">Get In Touch</h3>
+                <p class="mb-2">
+                    <i class="fa-solid fa-location-dot text-primary me-2"></i>123 Street, New York, USA
+                </p>
+                <p class="mb-2">
+                    <a href="mailto:info@example.com" class="text-light">
+                        <i class="fa-solid fa-envelope-open text-primary me-2"></i>info@example.com
+                    </a>
+                </p>
+                <p class="mb-0">
+                    <a href="tel:96176032980" class="text-light">
+                        <i class="fa-solid fa-phone text-primary me-2"></i>+012 345 67890
+                    </a>
+                </p>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <h3 class="text-white mb-4">Follow Us</h3>
+                <div class="d-flex">
+                    <a class="btn btn-lg btn-primary btn-lg-square rounded me-2" href="#">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+                    <a class="btn btn-lg btn-primary btn-lg-square rounded me-2" href="#">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                    <a class="btn btn-lg btn-primary btn-lg-square rounded me-2" href="#">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                    <a class="btn btn-lg btn-primary btn-lg-square rounded" href="#">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="copyright py-4">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-md-0">&copy;
+                        <a class="text-white border-bottom" href="{% url 'Home' %}">AcedmiTechLearn</a>.
+                        All Rights Reserved.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Footer End -->
+
+<!-- JavaScript Libraries -->
+<script src="{% static 'lib/jquery-3.4.1.min.js' %}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"
+        integrity="sha512-7Pi/otdlbbCR+LnW+F7PwFcSDJOuUJB3OxtEHbg4vSMvzvJjde4Po1v4BR9Gdc9aXNUNFVUY+SK51wWT8WF0Gg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="{% static 'lib/wow/wow.min.js' %}"></script>
+<script src="{% static 'lib/easing/easing.min.js' %}"></script>
+<script src="{% static 'lib/waypoints/waypoints.min.js' %}"></script>
+<script src="{% static 'lib/counterup/counterup.min.js' %}"></script>
+<script src="{% static 'lib/owlcarousel/owl.carousel.min.js' %}"></script>
+<script src="{% static 'lib/isotope/isotope.pkgd.min.js' %}"></script>
+<script src="{% static 'lib/lightbox/js/lightbox.min.js' %}"></script>
+
+<!-- Template Javascript -->
+<script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>

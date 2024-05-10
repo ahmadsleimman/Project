@@ -1,0 +1,205 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block content %}
+
+
+<!-- Page Header Start -->
+<div class="container-fluid page-header py-5">
+    <div class="container">
+        <h1 class="display-3 text-white mb-3 animated slideInDown">{{class.name}}</h1>
+        <nav class="breadcrumb animated slideInDown">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a class="text-white" href="{% url 'Home' %}">Home</a></li>
+                <li class="breadcrumb-item"><a class="text-white" href="{% url 'Classes' %}">Classes</a></li>
+                <li class="breadcrumb-item text-white" aria-current="page">{{class.name}}</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+<!-- Page Header End -->
+
+
+<!-- Detail Start -->
+<section class="course-details-area py-5">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-lg-8">
+                {% if request.user.is_authenticated %}
+                {% if isEnrolled or isAdmin %}
+                <section style="background-color: #eee;">
+                    <div class="card" id="chat1">
+                        <div class="card-body" style="position: relative; height: 400px;">
+                            {% for classmessage in classmessages %}
+
+                            {% if classmessage.user == request.user %}
+                            <div class="d-flex flex-row justify-content-end my-2">
+                                <div>
+                                    <small class="mb-2 rounded-3 text-muted d-flex justify-content-end">@me</small>
+                                    {% if classmessage.body %}
+                                    <p class="p-2 mb-1 text-white rounded-3 bg-primary">{{classmessage.body}}</p>
+                                    {% endif %}
+
+                                    {% if classmessage.voice %}
+                                    <div class="mb-1">
+                                        <audio controls controlsList="nodownload">
+                                            <source src="{{classmessage.voice.url}}" type="audio/mp3">
+                                            Your browser does not support the audio element.
+                                        </audio>
+                                    </div>
+                                    {% endif %}
+
+                                    {% if classmessage.image %}
+                                    <div class="mb-1">
+                                        <a href="{{classmessage.image.url}}" data-lightbox="CLASS{{classmessage.id}}">
+                                            <img class="img-fluid" alt="image" width="300px"
+                                                 src="{{classmessage.image.url}}">
+                                        </a>
+                                    </div>
+                                    {% endif %}
+                                    <small class="mb-3 rounded-3 text-muted d-flex justify-content-end">
+                                        {{classmessage.created}}
+                                    </small>
+                                </div>
+                            </div>
+                            {% else %}
+                            <div class="d-flex flex-row justify-content-start my-2">
+                                <div>
+                                    <small class="mb-2 rounded-3 text-muted">
+                                        @{{classmessage.user.username}}
+                                    </small>
+
+                                    {% if classmessage.body %}
+                                    <p class="p-2 mb-1 rounded-3" style="background-color: #f5f6f7;">
+                                        {{classmessage.body}}
+                                    </p>
+                                    {% endif %}
+
+                                    {% if classmessage.voice %}
+                                    <div class="mb-1">
+                                        <audio controls controlsList="nodownload">
+                                            <source src="{{classmessage.voice.url}}" type="audio/mp3">
+                                            Your browser does not support the audio element.
+                                        </audio>
+                                    </div>
+                                    {% endif %}
+
+                                    {% if classmessage.image %}
+                                    <div class="mb-1">
+                                        <a href="{{classmessage.image.url}}" data-lightbox="CLASS{{classmessage.id}}">
+                                            <img class="img-fluid" width="300px" alt="image"
+                                                 src="{{classmessage.image.url}}">
+                                        </a>
+                                    </div>
+                                    {% endif %}
+
+                                    <small class="mb-3 rounded-3 text-muted">{{classmessage.created}}</small>
+                                </div>
+                            </div>
+                            {% endif %}
+
+                            {% endfor %}
+                        </div>
+                        <form action="" method="POST">
+                            {% csrf_token %}
+                            <div class="card-footer text-muted d-flex justify-content-start align-items-center p-3">
+                                <input type="text" name="message" class="form-control form-control-lg shadow-none"
+                                       placeholder="Type message..." id="chat-message-input">
+                                <button class="btn ms-2" id="chat-message-submit"><i class="fas fa-paper-plane"></i>
+                                </button>
+                                <button class="btn" id="startRecord"><i class="fas fa-microphone"></i>
+                                </button>
+                                <button class="btn d-none" id="stopRecord"><i class="fas fa-stop"></i>
+                                </button>
+                                <button class="btn d-none" id="deleteRecord"><i class="fas fa-trash"></i>
+                                </button>
+                                <button class="btn" id="image-file-handler"><i class="fas fa-image"></i>
+                                </button>
+                                <input type="file" id="image-file" class="d-none" accept="image/*">
+                            </div>
+                        </form>
+                    </div>
+                </section>
+                {% else %}
+                <div>
+                    <h3>Enroll In This Class To Get Access To Group Chat</h3>
+                </div>
+                {% endif %}
+                {% endif %}
+            </div>
+
+            <div class="col-lg-4 right-contents">
+                <ul>
+                    <li>
+                        <div class="justify-content-between d-flex">
+                            <p>Teacher’s Name</p>
+                            <span class="text-primary">{{class.teacher.name}}</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="justify-content-between d-flex">
+                            <p>Class Fee</p>
+                            <span class="text-primary">${{class.price}}</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="justify-content-between d-flex">
+                            <p>Language</p>
+                            <span class="text-primary">{{class.language}}</span>
+                        </div>
+                    </li>
+                    {% if request.user.is_authenticated %}
+                    {% if isEnrolled or isAdmin %}
+                    <li>
+                        <div class="justify-content-between d-flex">
+                            <p>Classroom</p>
+                            <span>
+                                <a href="{{class.classroom_link}}" target="_blank">Go Classroom</a>
+                            </span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="justify-content-between d-flex">
+                            <p>Zoom</p>
+                            <span>
+                                <a href="{{class.zoom_link}}" target="_blank">Go Zoom</a>
+                            </span>
+                        </div>
+                    </li>
+                    {% endif %}
+                    {% endif %}
+                </ul>
+                {% if request.user.is_authenticated and not isAdmin %}
+                {% if isRequested %}
+                <button class="btn text-uppercase btn-primary w-100 disabled" disabled>Request Sent</button>
+                {% elif not isEnrolled and not isFinancial %}
+                <a href="{% url 'ClassEnroll' id=class.id %}" class="btn text-uppercase btn-primary w-100 mb-3">
+                    Enroll The Class</a>
+                <p class="text-center">
+                    <a href="{% url 'ClassFinancialAid' id=class.id %}" class="text-muted">
+                        Or you can request a Financial Aid
+                    </a>
+                </p>
+                {% elif isFinancial %}
+                <p class="text-center">
+                    Financial request sent
+                </p>
+                {% endif %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Detail End   -->
+
+{% if isEnrolled or isAdmin %}
+
+{{ request.user.id|json_script:"user" }}
+{{ class.id|json_script:"class_id" }}
+{{ class.name|json_script:"class_name" }}
+
+<script src="{% static 'js/liveChat.js' %}"></script>
+
+{% endif %}
+
+{% endblock content %}

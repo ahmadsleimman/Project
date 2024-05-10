@@ -1,0 +1,21 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container d-flex justify-content-center align-items-center vh-100" style="max-width: 460px;">
+    <div class="row">
+        <div class="text-center p-4 bg-primary">
+            <h2 style="color: #FAFAF9;">Academy Tech Learn</h2>
+        </div>
+        <div class="card text-center">
+            <div class="card-body">
+                <img src="{% static 'img/icon_email.png' %}" class="my-4" alt="email">
+                <h2 class="p-2 text-center mb-3 text-primary">You're Nearly There!</h2>
+                <p class="card-text p-2 text-center">We Just Need To Verify Your Email Address To Complete Setting Up
+                    Your Account.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,104 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block content %}
+<link href="{% static 'css/select.css' %}" rel="stylesheet">
+
+<div class="container my-5 wow fadeInUp" data-wow-delay="0.3s">
+    <div class="text-center mb-3">
+        <h2>Choose a Track</h2>
+    </div>
+    <form method="POST" action="">
+        {% csrf_token %}
+        <div class="row g-4 justify-content-center text-center">
+            <div class="col-md-6 col-lg-4">
+                <label for="radio-card-1" class="radio-card">
+                    <input type="radio" name="track" value="Web Development" id="radio-card-1"/>
+                    <div class="card-content-wrapper">
+                        <span class="check-icon"></span>
+                        <div class="card-content">
+                            <img class="mb-2 img-fluid"
+                                 src="https://image.freepik.com/free-vector/group-friends-giving-high-five_23-2148363170.jpg"/>
+                            <h4>Web Development</h4>
+                            <h5>Web Development</h5>
+                        </div>
+                    </div>
+                </label>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <label for="radio-card-2" class="radio-card">
+                    <input type="radio" name="track" value="Mobile Application" id="radio-card-2"/>
+                    <div class="card-content-wrapper">
+                        <span class="check-icon"></span>
+                        <div class="card-content">
+                            <img class="mb-2 img-fluid"
+                                 src="https://image.freepik.com/free-vector/people-putting-puzzle-pieces-together_52683-28610.jpg"/>
+                            <h4>Mobile Application</h4>
+                            <h5>Mobile Application</h5>
+                        </div>
+                    </div>
+                </label>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <label for="radio-card-3" class="radio-card">
+                    <input type="radio" name="track" value="AI" id="radio-card-3"/>
+                    <div class="card-content-wrapper">
+                        <span class="check-icon"></span>
+                        <div class="card-content">
+                            <img class="mb-2 img-fluid"
+                                 src="https://image.freepik.com/free-vector/group-friends-giving-high-five_23-2148363170.jpg"/>
+                            <h4>AI</h4>
+                            <h5>AI</h5>
+                        </div>
+                    </div>
+                </label>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <label for="radio-card-4" class="radio-card">
+                    <input type="radio" name="track" value="Game Development" id="radio-card-4"/>
+                    <div class="card-content-wrapper">
+                        <span class="check-icon"></span>
+                        <div class="card-content">
+                            <img class="mb-2 img-fluid"
+                                 src="https://image.freepik.com/free-vector/people-putting-puzzle-pieces-together_52683-28610.jpg"/>
+                            <h4>Game Development</h4>
+                            <h5>Game Development</h5>
+                        </div>
+                    </div>
+                </label>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <label for="radio-card-5" class="radio-card">
+                    <input type="radio" name="track" value="Desktop Application" id="radio-card-5"/>
+                    <div class="card-content-wrapper">
+                        <span class="check-icon"></span>
+                        <div class="card-content">
+                            <img class="mb-2 img-fluid"
+                                 src="https://image.freepik.com/free-vector/group-friends-giving-high-five_23-2148363170.jpg"/>
+                            <h4>Desktop Application</h4>
+                            <h5>Desktop Application</h5>
+                        </div>
+                    </div>
+                </label>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <label for="radio-card-6" class="radio-card">
+                    <input type="radio" name="track" value="Cyber Security" id="radio-card-6"/>
+                    <div class="card-content-wrapper">
+                        <span class="check-icon"></span>
+                        <div class="card-content">
+                            <img class="mb-2 img-fluid"
+                                 src="https://image.freepik.com/free-vector/people-putting-puzzle-pieces-together_52683-28610.jpg"/>
+                            <h4>Cyber Security</h4>
+                            <h5>Cyber Security</h5>
+                        </div>
+                    </div>
+                </label>
+            </div>
+        </div>
+        <div>
+            <button type="submit" class="btn btn-primary" name="submit">Save</button>
+        </div>
+    </form>
+</div>
+
+{% endblock content %}

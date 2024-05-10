@@ -1,0 +1,60 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block content %}
+
+
+<!-- Page Header Start -->
+<div class="container-fluid page-header py-5">
+    <div class="container">
+        <h1 class="display-3 text-white mb-3 animated slideInDown">My Classes</h1>
+        <nav aria-label="breadcrumb animated slideInDown">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a class="text-white" href="{% url 'Home' %}">Home</a></li>
+                <li class="breadcrumb-item text-white active" aria-current="page">My Classes</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+<!-- Page Header End -->
+
+
+<!-- My Classes Start -->
+<div class="container-fluid py-5">
+    <div class="container">
+        <div class="table-responsive">
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th scope="col">Class</th>
+                    <th scope="col">Course</th>
+                    <th scope="col">Track</th>
+                    <th scope="col">Language</th>
+                    <th scope="col">Teacher</th>
+                    <th scope="col">Zoom</th>
+                    <th scope="col">Classroom</th>
+                    <th scope="col">View</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                {% for class in classes %}
+                <tr>
+                    <td>{{class.name}}</td>
+                    <td>{{class.course.name}}</td>
+                    <td>{{class.course.track}}</td>
+                    <td>{{class.language}}</td>
+                    <td>{{class.teacher.name}}</td>
+                    <td><a href="{{class.zoom_link}}" target="_blank">Go Zoom</a></td>
+                    <td><a href="{{class.classroom_link}}" target="_blank">Go Classroom</a></td>
+                    <td><a href="{% url 'ClassDetails' id=class.id %}"><i class="fa-solid fa-eye"></i></a></td>
+                </tr>
+                {% endfor %}
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<!-- My Classes End -->
+
+{% endblock content %}

@@ -1,0 +1,279 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block content %}
+
+
+<!-- Carousel Start -->
+<div class="container-fluid p-0 pb-5 wow fadeIn" data-wow-delay="0.1s">
+    <div class="header position-relative">
+        <div class="header-item position-relative">
+            <img class="img-fluid" src="{% static 'img/1.jpg' %}" alt="header">
+            <div class="inner">
+                <div class="container">
+                    <div class="row justify-content-start">
+                        <div class="col-10 col-lg-8">
+                            <h1 class="display-2 text-white mb-2 animated slideInDown">Welcome to our tech learning hub</h1>
+                            <p class="d-none d-lg-block fs-5 fw-medium text-white mb-4 pb-3"> Here,
+                                we merge the convenience of online/Offline learning. Our platform offers a seamless
+                                experience,
+                                allowing you to dive into the world of technology from anywhere, at any time.
+                                Whether you prefer the flexibility of virtual classes, we've got you covered.
+                                Join us as we embark on a journey of discovery and skill-building, where learning knows
+                                no
+                                bounds
+                            </p>
+                            <a class="btn btn-primary p-3" href="{% url 'Login' %}">Become a Teacher</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Carousel End -->
+
+<!-- Feature Start -->
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-3 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="feature-item text-center pt-3">
+                    <div class="p-4">
+                        <i class="fa fa-3x fa-graduation-cap text-primary mb-4"></i>
+                        <h5 class="mb-3">STUDENTS</h5>
+                        <p>Empowering a community of learners with quality education. Join our diverse student body on a
+                            journey to success.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="feature-item text-center pt-3">
+                    <div class="p-4">
+                        <i class="fa fa-3x fa-globe text-primary mb-4"></i>
+                        <h5 class="mb-3">PROJECTS DONE</h5>
+                        <p>Our students have successfully completed thousands of projects, showcasing their skills and
+                            creativity.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="feature-item text-center pt-3">
+                    <div class="p-4">
+                        <i class="fa fa-3x fa-home text-primary mb-4"></i>
+                        <h5 class="mb-3">SUCCESS</h5>
+                        <p>Our commitment to excellence has led to the success of 10,000+ students who have achieved
+                            their goals.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 wow fadeInUp" data-wow-delay="0.7s">
+                <div class="feature-item text-center pt-3">
+                    <div class="p-4">
+                        <i class="fa fa-3x fa-book-open text-primary mb-4"></i>
+                        <h5 class="mb-3">EXPERT TEACHERS</h5>
+                        <p>Our dedicated team of expert teachers is here to guide and inspire students on their
+                            educational journey.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Feature End -->
+
+<!-- Services Start -->
+<div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+    <div class="container">
+        <div class="text-center mx-auto mb-5" style="max-width: 600px;">
+            <h2 class="text-primary" style="letter-spacing: 5px;">Services</h2>
+        </div>
+        <div class="row g-5">
+            <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.3s">
+                <div class="service-item bg-light border-bottom border-5 border-primary rounded">
+                    <div class="position-relative p-5">
+                        <h3 class="mb-3">Diverse Course Offerings</h3>
+                        <p>A wide selection of technology courses covering topics such as programming
+                            languages (Python, JavaScript, etc.), web development, mobile app development,
+                            data science, machine learning, cybersecurity, cloud computing, and more.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.6s">
+                <div class="service-item bg-light border-bottom border-5 border-primary rounded">
+                    <div class="position-relative p-5">
+                        <i class="flaticon-surveillance d-block display-1 fw-normal text-secondary mb-3"></i>
+                        <h3 class="mb-3">Interactive Learning Materials</h3>
+                        <p>Engaging learning materials including video lectures, interactive coding exercises, quizzes,
+                            projects,
+                            and hands-on labs to reinforce learning and practical application of concepts.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.9s">
+                <div class="service-item bg-light border-bottom border-5 border-primary rounded">
+                    <div class="position-relative p-5">
+                        <i class="flaticon-surveillance d-block display-1 fw-normal text-secondary mb-3"></i>
+                        <h3 class="mb-3">Expert Instruction</h3>
+                        <p>Courses led by experienced instructors who are experts in their respective fields,
+                            providing high-quality instruction, insights, and guidance.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.3s">
+                <div class="service-item bg-light border-bottom border-5 border-primary rounded">
+                    <div class="position-relative p-5">
+                        <i class="flaticon-double fa-3x text-secondary mb-3"></i>
+                        <h3 class="mb-3">Continuous Learning</h3>
+                        <p>Opportunities for continuous learning and skill development
+                            through ongoing updates, new course releases, advanced topics,
+                            and specialized workshops to keep pace with the latest trends and advancements in
+                            technology.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.6s">
+                <div class="service-item bg-light border-bottom border-5 border-primary rounded">
+                    <div class="position-relative p-5">
+                        <i class="flaticon-security-system d-block display-1 fw-normal text-secondary mb-3"></i>
+                        <h3 class="mb-3">Privacy and Security</h3>
+                        <p>The platform prioritizes user privacy and security by implementing encryption protocols,
+                            user authentication mechanisms, and moderation tools to prevent spam, harassment, or
+                            unauthorized access.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.9s">
+                <div class="service-item bg-light border-bottom border-5 border-primary rounded">
+                    <div class="position-relative p-5">
+                        <i class="flaticon-recorder d-block display-1 fw-normal text-secondary mb-3"></i>
+                        <h3 class="mb-3">Teacher Interaction</h3>
+                        <p>Learners can directly communicate with instructors through live chat to ask questions,
+                            seek clarification on course content, request feedback on assignments, or schedule virtual
+                            office hours for additional assistance.</p>
+                        <!--                        <a href="">Read More<i class="bi bi-arrow-right ms-2"></i></a>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Services End -->
+
+<!-- About Start -->
+<div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-lg-7">
+                <div class="section-title mb-4">
+                    <h2 class="position-relative d-inline-block text-primary">About Us</h2>
+                    <h1 class="mb-4">AcademyTechLearn</h1>
+                </div>
+                <p class="mb-4">At AcademyTechLearn, we pride ourselves on being a destination for individuals seeking
+                    to
+                    delve into the realm of web development. Our commitment lies in providing comprehensive courses
+                    tailored
+                    to suit all levels of expertise, from beginners to advanced practitioners. With a dedication to
+                    excellence,
+                    we offer a diverse range of programs meticulously designed to impart cutting-edge technological
+                    skills. Whether
+                    you're embarking on your journey in coding or aiming to refine your proficiency, our academy stands
+                    as a beacon
+                    of knowledge and innovation. Through our hands-on approach and expert guidance, we empower aspiring
+                    developers to
+                    unlock their potential and thrive in the dynamic world of technology. Join us at AcademyTechLearn,
+                    where learning
+                    meets limitless possibilities in the ever-evolving landscape of web development.
+                </p>
+                <div class="row g-2">
+                    <div class="col-sm-6 wow zoomIn" data-wow-delay="0.3s">
+                        <h5 class="mb-3"><i class="fa fa-check-circle text-primary me-3"></i>Online/Offline</h5>
+                        <h5 class="mb-3"><i class="fa fa-check-circle text-primary me-3"></i>Expert Faculty</h5>
+                    </div>
+                    <div class="col-sm-6 wow zoomIn" data-wow-delay="0.6s">
+                        <h5 class="mb-3"><i class="fa fa-check-circle text-primary me-3"></i>Best Teachers</h5>
+                        <h5 class="mb-3"><i class="fa fa-check-circle text-primary me-3"></i>Affordable Pricing</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5" style="min-height: 500px;">
+                <div class="position-relative h-100">
+                    <img class="position-absolute w-100 h-100 rounded wow zoomIn" data-wow-delay="0.9s"
+                         src="{% static 'img/Master.jpg' %}" style="object-fit: cover;">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- About End -->
+
+<!-- Class Start -->
+<div class="container-fluid py-5">
+    <div class="container">
+        <div class="text-center mx-auto mb-5" data-wow-delay="0.1s" style="max-width: 600px;">
+            <h2 class="text-primary">Our Classes</h2>
+            <h1 class="mb-4">Interactive offline Classes with Google Classroom Integration</h1>
+        </div>
+        <div class="text-end ms-auto me-4 wow fadeInUp" data-wow-delay="0.3s">
+            <p><a href="{% url 'Classes' %}">View All</a></p>
+        </div>
+        <div class="owl-carousel class-carousel wow fadeInUp" data-wow-delay="0.5s">
+            {% for classe in classes %}
+            <div>
+                <div class="course-item bg-light">
+                    <div class="position-relative overflow-hidden">
+                        <img class="img-fluid" src="{{classe.img_class.url}}" alt="course">
+                        <div class="w-100 d-flex justify-content-center position-absolute bottom-0 start-0 mb-4">
+                            <a href="{% url 'ClassDetails' id=classe.id %}"
+                               class="flex-shrink-0 btn btn-sm btn-primary px-3"
+                               style="border-radius: 0 30px 30px 0;">Join Now
+                            </a>
+                        </div>
+                    </div>
+                    <div class="text-center p-4 pb-0">
+                        <h3 class="mb-0">${{classe.price}}</h3>
+                        <h5 class="mb-4">{{classe.name}}</h5>
+                        <h4>Language: {{classe.language}}</h4>
+                    </div>
+                    <div class="d-flex border-top">
+                        <small class="flex-fill text-center border-end py-2">
+                            <i class="fa fa-user-tie text-primary me-2"></i>
+                            {{classe.teacher.name}}
+                        </small>
+                        <small class="flex-fill text-center py-2">
+                            <i class="fa fa-user text-primary me-2"></i>
+                            {{classe.students.count}} Students
+                        </small>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<!-- Class End -->
+
+
+<!-- Feedback Start  -->
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+            <h2 class="text-primary">Testimonial</h2>
+            <h1 class="mb-4">What Our Students Say!</h1>
+        </div>
+        <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
+            {% for feedback in feedbacks %}
+            <div class="testimonial-item text-center">
+                <div class="testimonial-text text-center rounded p-4">
+                    <p>{{feedback.message}}.</p>
+                    <h5 class="mb-1">{{feedback.name}}</h5>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<!-- Feedback End  -->
+
+
+{% endblock content %}

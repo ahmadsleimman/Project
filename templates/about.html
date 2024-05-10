@@ -1,0 +1,62 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block content %}
+
+
+<!-- Page Header Start -->
+<div class="container-fluid page-header py-5">
+    <div class="container">
+        <h1 class="display-3 text-white mb-3 animated slideInDown">About Us</h1>
+        <nav aria-label="breadcrumb animated slideInDown">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a class="text-white" href="{% url 'Home' %}">Home</a></li>
+                <li class="breadcrumb-item text-white active" aria-current="page">About</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+<!-- Page Header End -->
+
+
+<!-- About Start -->
+<div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-lg-7">
+                <div class="section-title mb-4">
+                    <h2 class="position-relative d-inline-block text-primary">About Us</h2>
+                    <h1 class="mb-4">AcademyTechLearn</h1>
+                </div>
+                <p class="mb-4">At AcademyTechLearn, we pride ourselves on being a destination for individuals seeking to
+                    delve into the realm of web development. Our commitment lies in providing comprehensive courses tailored
+                    to suit all levels of expertise, from beginners to advanced practitioners. With a dedication to excellence,
+                    we offer a diverse range of programs meticulously designed to impart cutting-edge technological skills. Whether
+                    you're embarking on your journey in coding or aiming to refine your proficiency, our academy stands as a beacon
+                    of knowledge and innovation. Through our hands-on approach and expert guidance, we empower aspiring developers to
+                    unlock their potential and thrive in the dynamic world of technology. Join us at AcademyTechLearn, where learning
+                    meets limitless possibilities in the ever-evolving landscape of web development.
+</p>
+                <div class="row g-2">
+                    <div class="col-sm-6 wow zoomIn" data-wow-delay="0.3s">
+                        <h5 class="mb-3"><i class="fa fa-check-circle text-primary me-3"></i>Online/Offline</h5>
+                        <h5 class="mb-3"><i class="fa fa-check-circle text-primary me-3"></i>Expert Faculty</h5>
+                    </div>
+                    <div class="col-sm-6 wow zoomIn" data-wow-delay="0.6s">
+                        <h5 class="mb-3"><i class="fa fa-check-circle text-primary me-3"></i>Best Teachers</h5>
+                        <h5 class="mb-3"><i class="fa fa-check-circle text-primary me-3"></i>Affordable Pricing</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5" style="min-height: 500px;">
+                <div class="position-relative h-100">
+                    <img class="position-absolute w-100 h-100 rounded wow zoomIn" data-wow-delay="0.9s"
+                         src="{% static 'img/Master.jpg' %}" style="object-fit: cover;">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- About End -->
+
+
+{% endblock content %}

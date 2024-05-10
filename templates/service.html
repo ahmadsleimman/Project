@@ -1,0 +1,96 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block content %}
+
+
+<!-- Page Header Start -->
+<div class="container-fluid page-header py-5">
+    <div class="container">
+        <h1 class="display-3 text-white mb-3 animated slideInDown">Services</h1>
+        <nav aria-label="breadcrumb animated slideInDown">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a class="text-white" href="{% url 'Home' %}">Home</a></li>
+                <li class="breadcrumb-item text-white active" aria-current="page">Services</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+<!-- Page Header End -->
+
+
+<!-- Services Start -->
+<div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+    <div class="container">
+        <div class="text-center mx-auto mb-5" style="max-width: 600px;">
+            <h2 class="text-primary" style="letter-spacing: 5px;">Services</h2>
+        </div>
+        <div class="row g-5">
+            <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.3s">
+                <div class="service-item bg-light border-bottom border-5 border-primary rounded">
+                    <div class="position-relative p-5">
+                        <h3 class="mb-3">Diverse Course Offerings</h3>
+                        <p>A wide selection of technology courses covering topics such as programming
+                            languages (Python, JavaScript, etc.), web development, mobile app development,
+                            data science, machine learning, cybersecurity, cloud computing, and more.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.6s">
+                <div class="service-item bg-light border-bottom border-5 border-primary rounded">
+                    <div class="position-relative p-5">
+                        <i class="flaticon-surveillance d-block display-1 fw-normal text-secondary mb-3"></i>
+                        <h3 class="mb-3">Interactive Learning Materials</h3>
+                        <p>Engaging learning materials including video lectures, interactive coding exercises, quizzes, projects,
+                            and hands-on labs to reinforce learning and practical application of concepts.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.9s">
+                <div class="service-item bg-light border-bottom border-5 border-primary rounded">
+                    <div class="position-relative p-5">
+                        <i class="flaticon-surveillance d-block display-1 fw-normal text-secondary mb-3"></i>
+                        <h3 class="mb-3">Expert Instruction</h3>
+                        <p>Courses led by experienced instructors who are experts in their respective fields,
+                            providing high-quality instruction, insights, and guidance.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.3s">
+                <div class="service-item bg-light border-bottom border-5 border-primary rounded">
+                    <div class="position-relative p-5">
+                        <i class="flaticon-double fa-3x text-secondary mb-3"></i>
+                        <h3 class="mb-3">Continuous Learning</h3>
+                        <p>Opportunities for continuous learning and skill development
+                            through ongoing updates, new course releases, advanced topics,
+                            and specialized workshops to keep pace with the latest trends and advancements in technology.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.6s">
+                <div class="service-item bg-light border-bottom border-5 border-primary rounded">
+                    <div class="position-relative p-5">
+                        <i class="flaticon-security-system d-block display-1 fw-normal text-secondary mb-3"></i>
+                        <h3 class="mb-3">Privacy and Security</h3>
+                        <p>The platform prioritizes user privacy and security by implementing encryption protocols,
+                            user authentication mechanisms, and moderation tools to prevent spam, harassment, or unauthorized access.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.9s">
+                <div class="service-item bg-light border-bottom border-5 border-primary rounded">
+                    <div class="position-relative p-5">
+                        <i class="flaticon-recorder d-block display-1 fw-normal text-secondary mb-3"></i>
+                        <h3 class="mb-3">Teacher Interaction</h3>
+                        <p>Learners can directly communicate with instructors through live chat to ask questions,
+                            seek clarification on course content, request feedback on assignments, or schedule virtual
+                            office hours for additional assistance.</p>
+                        <!--                        <a href="">Read More<i class="bi bi-arrow-right ms-2"></i></a>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Services End -->
+
+{% endblock content %}

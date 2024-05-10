@@ -1,0 +1,114 @@
+{% extends 'index.html' %}
+{% load static %}
+{% load socialaccount %}
+{% block content %}
+
+<section class="register">
+    <div class="container">
+        <div class="row flex-column-reverse flex-md-row d-flex justify-content-center align-items-center">
+            <div class="col-12 col-md-6 col-lg-5">
+                {% if error_message %}
+                <div class="alert alert-danger mb-3">{{error_message}}</div>
+                {% endif %}
+                <h2 class="text-center fw-bold" style="color: #263238; letter-spacing: 4px">REGISTER</h2>
+                <div class="card-body p-4">
+                    <form method="POST" action="">
+                        {% csrf_token %}
+                        <div class="input-group mb-3">
+                            <span class="input-group-text">
+                                <i class="fa-solid fa-user fa-xl" style="color: #0d6efd"></i>
+                            </span>
+                            <div class="form-floating">
+                                <input type="text" name="fullname" id="fullname" class="form-control"
+                                       placeholder="Full Name" required/>
+                                <label for="fullname" class="form-label" style="color: #aaaaaa">Full Name</label>
+                            </div>
+                        </div>
+
+                        <div class="input-group mb-3">
+                            <span class="input-group-text">
+                                <i class="fa-solid fa-user fa-xl" style="color: #0d6efd"></i>
+                            </span>
+                            <div class="form-floating">
+                                <input type="text" name="username" id="username" class="form-control"
+                                       placeholder="Username" required/>
+                                <label for="username" class="form-label" style="color: #aaaaaa">Username</label>
+                            </div>
+                        </div>
+
+                        <div class="input-group mb-3">
+                            <span class="input-group-text">
+                                <i class="fa-solid fa-envelope fa-xl" style="color: #0d6efd"></i>
+                            </span>
+                            <div class="form-floating">
+                                <input type="email" name="email" id="email" class="form-control" placeholder="Email"
+                                       required/>
+                                <label for="email" class="form-label" style="color: #aaaaaa">Email</label>
+                            </div>
+                        </div>
+
+                        <div class="input-group mb-3">
+                            <span class="input-group-text">
+                                <i class="fa-solid fa-lock fa-xl" style="color: #0d6efd"></i>
+                            </span>
+                            <div class="form-floating">
+                                <input type="password" name="password" id="password" class="form-control"
+                                       placeholder="Password" required/>
+                                <label for="password" class="form-label" style="color: #aaaaaa">Password</label>
+                            </div>
+                        </div>
+
+                        <div class="input-group mb-4">
+                            <span class="input-group-text">
+                                <i class="fa-solid fa-lock fa-xl" style="color: #0d6efd"></i>
+                            </span>
+                            <div class="form-floating">
+                                <input type="password" name="confirmpassword" id="confirmpassword" class="form-control"
+                                       placeholder="Confirm Password" required/>
+                                <label for="confirmpassword" class="form-label" style="color: #aaaaaa">Confirm
+                                    Password</label>
+                            </div>
+                        </div>
+
+
+                        <div class="mb-4">
+                            <select class="form-select" id="track" name="track" required>
+                                <option value="1">Choose a Track</option>
+                                <option value="Web Development">Web Development</option>
+                                <option value="Mobile Application">Mobile Application</option>
+                                <option value="AI">AI</option>
+                                <option value="Game Development">Game Development</option>
+                                <option value="Desktop Application">Desktop Application</option>
+                                <option value="Cyber Security">Cyber Security</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-2 text-center">
+                            <button type="submit" class="btn btn-lg" style="color:#ffffff; padding: 8px 70px;
+                        background-color: #0d6efd; border-radius: 40px; letter-spacing:2px">REGISTER
+                            </button>
+                        </div>
+                        <p class="mb-2 pb-lg-3 text-center" style="color: #7a7a7a">Already have an account ?
+                            <a href="{% url 'Login' %}" style="color: #0d6efd">LOGIN</a>
+                        </p>
+                        <p class="mb-4 text-center" style="color: #7a7a7a">
+                            <a class="btn text-black" href="{% provider_login_url 'google' %}?next=/complete-account/">
+                                Sign In with Google
+                                <i class="fa-brands fa-google"></i>
+                            </a>
+                        </p>
+                        <div class="text-center">
+                            <a href="{% url 'Home' %}" class="btn" style="color:#0d6efd; padding: 8px 50px;
+                        background-color: #ffffff; border: 2px solid #D3D3D3; border-radius: 40px ">Back</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-7">
+                <img src="{%static 'img/signup.jpg' %}" alt="register" class="img-fluid w-100 h-100"/>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock content %}
